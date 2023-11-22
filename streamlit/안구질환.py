@@ -34,7 +34,7 @@ from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
 # 활성화 : venv\Scripts\activate
 # 비활성화 : venv\Scripts\deactivate
 current_directory = os.getcwd()
-print("Current Directory:", current_directory)
+st.header(f"{current_directory}")
 
 #######################################################################################
 class BasicBlock(nn.Module):
