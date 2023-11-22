@@ -307,7 +307,8 @@ def mobilenet(alpha=1, num_classes = 2):
 @st.cache_resource
 def load_model(path, load_full_model=True):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    root_dir = 'binineni/cuai-cv-project/main/models/'
+    #root_dir = 'binineni/cuai-cv-project/main/models/'
+    root_dir = 'models/'
 
     if load_full_model:
         model = torch.load(root_dir + path, map_location=torch.device('cpu'))
