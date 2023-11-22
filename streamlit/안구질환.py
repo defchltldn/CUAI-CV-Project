@@ -315,7 +315,7 @@ def load_model(path, load_full_model=True):
     #root_dir = 'C:/Users/sook7/Desktop/CUAI 프로젝트/반려동물 안구질환 탐지/models/'
 
     if load_full_model:
-        model = torch.load('models/' + path, map_location=torch.device('cpu'))
+        model = torch.load('CUAI-CV-Project/models/' + path, map_location=torch.device('cpu'))
     else:
         # If only model parameters are saved
         model = mobilenet(alpha=1).to(device)
@@ -403,8 +403,8 @@ disease_names = [
 ]
 
 #Constant
-cropped_image_path = streamlit/data/cropped_image.jpg"
-img_path = streamlit/data/upload.jpg"
+cropped_image_path = data/cropped_image.jpg"
+img_path = data/upload.jpg"
 
 def main():
     # Upload an image and set some options for demo purposes
