@@ -390,8 +390,8 @@ disease_names = [
 ]
 
 #Constant
-cropped_image_path = "data/cropped_image.jpg"
-img_path = "data/upload.jpg"
+cropped_image_path = "streamlit/data/cropped_image.jpg"
+img_path = "streamlit/data/upload.jpg"
 
 def main():
     # Upload an image and set some options for demo purposes
