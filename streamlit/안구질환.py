@@ -1,6 +1,7 @@
 #라이브러리 import
 #필요한 경우 install
 import streamlit as st
+import os
 from streamlit_cropper import st_cropper
 from PIL import Image
 import pandas as pd
@@ -32,6 +33,8 @@ from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
 ## 가상환경 설정 필요
 # 활성화 : venv\Scripts\activate
 # 비활성화 : venv\Scripts\deactivate
+current_directory = os.getcwd()
+print("Current Directory:", current_directory)
 
 #######################################################################################
 class BasicBlock(nn.Module):
