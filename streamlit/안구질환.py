@@ -33,8 +33,6 @@ from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
 ## 가상환경 설정 필요
 # 활성화 : venv\Scripts\activate
 # 비활성화 : venv\Scripts\deactivate
-current_directory = os.getcwd()
-st.header(f"{current_directory}")
 
 #######################################################################################
 class BasicBlock(nn.Module):
@@ -305,12 +303,6 @@ class MobileNet(nn.Module):
 def mobilenet(alpha=1, num_classes = 2):
     return MobileNet(alpha, num_classes)
 
-#@st.cache_resource
-# def load_model(path):
-#     root_dir = 'C:/Users/sook7/Desktop/CUAI 프로젝트/반려동물 안구질환 탐지/models/'
-#     model = torch.load(root_dir + path, map_location=torch.device('cpu') )
-#
-#     return model
 
 @st.cache_resource
 def load_model(path, load_full_model=True):
@@ -361,15 +353,6 @@ st.divider()
 
 st.sidebar.title("이미지 파일 업로드")
 
-# Radio
-# 버튼
-# 옵션으로
-# 변경
-# model_options = st.sidebar.radio("", ("ResNet50", "EfficientNetB0"))
-# # 선택된 모델 불러오기
-# selected_model_name = model_options
-#
-# #모델 output
 model_paths = [
     'pinkeye_MobileNet_model_full.pth', #결막염
     'ker_MobileNet_model_full.pth', #색소침착성각막질환
@@ -488,55 +471,7 @@ def main():
             st.divider()
             st.info("건강한 상태입니다.")
 
-        #     # 예측 결과 출력
-        #     if pred is not None and prob is not None:
-        #         if pred.item() == 0:
-        #             st.subheader("각막염이 의심되지 않음.")
-        #         else:
-        #             st.subheader("각막염 의심됨. 가까운 병원 내원 요망")
-        #         st.write("각막염 확률:", prob[1].item())
-        # except Exception as e:
-        #     st.error(f"Error during prediction: {e}")
-
-        # disease_list1 = ['결막염', '궤양성각막질환', '백내장', '비궤양성각막질환', '색소침착성각막염']
-        # disease_list2 = ['안검내반증', '안검염', '안검종양', '유루증', '핵경화']
-        #
-        # col1, col2, col3, col4, col5 = st.columns(5)
-        # col = [col1, col2, col3, col4, col5]
-        # # Display metric cards for diseases in disease_list1
-        # for i, disease in enumerate(disease_list1):
-        #     with col[i]:
-        #         st.metric(disease, "label")
-        #
-        # col6, col7, col8, col9, col10 = st.columns(5)
-        # col = [col6, col7, col8, col9, col10]
-        # for i, disease in enumerate(disease_list2):
-        #     with col[i]:
-        #         st.metric(disease, "label")
 
 if __name__ == "__main__":
     main()
-
-# uploaded_image = st.file_uploader("이미지 파일 업로드", type=["jpg","png","jpeg"])
-# # 이미지가 업로드되었을 경우에만 실행
-# if uploaded_image is not None:
-#     # 업로드된 이미지 표시
-#     st.image(uploaded_image, caption='Uploaded Image', use_column_width=True)
-#     # Get the file extension from the uploaded image name
-#     file_extension = uploaded_image.name.split('.')[-1]
-#     img_file = "C:/Users/sook7/Desktop/CUAI 프로젝트/반려동물 안구질환 탐지/streamlit/data/upload." + file_extension
-#     st.write(img_file)
-#     # Specify the format when saving the image
-#     Image.open(uploaded_image).save(img_file, format='JPEG')
-#
-#     # 모델 예측
-#     pred, prob = get_prediction(model, img_file)
-#
-#     # 예측 결과 표시
-#     st.write("예측 결과:", pred.item())
-#     st.write("확률:", prob.numpy())
-#     # Assuming prob is a torch tensor containing probabilities
-#     # positive_class_prob = prob[1].item()
-#     # st.write("예측 결과:", pred.item())
-#     # st.write("확률:", positive_class_prob)
 
