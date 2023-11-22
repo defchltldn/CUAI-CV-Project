@@ -312,10 +312,10 @@ def mobilenet(alpha=1, num_classes = 2):
 @st.cache_resource
 def load_model(path, load_full_model=True):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    #root_dir = 'C:/Users/sook7/Desktop/CUAI 프로젝트/반려동물 안구질환 탐지/models/'
+    root_dir = 'binineni/cuai-cv-project/main/models/'
 
     if load_full_model:
-        model = torch.load('CUAI-CV-Project/models/' + path, map_location=torch.device('cpu'))
+        model = torch.load(root_dir + path, map_location=torch.device('cpu'))
     else:
         # If only model parameters are saved
         model = mobilenet(alpha=1).to(device)
