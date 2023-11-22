@@ -9,13 +9,7 @@ from io import StringIO
 import datetime
 import matplotlib.pyplot as plt
 import matplotlib.image as img
-import plotly.express as px
-import plotly.graph_objects as go
-import plotly.figure_factory as ff
 import statsmodels.api as sm
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.metrics.pairwise import euclidean_distances
-import seaborn as sns
 import time
 from streamlit_option_menu import option_menu
 import torch
@@ -30,8 +24,6 @@ import torchvision
 import torchvision.transforms as transforms
 from efficientnet_pytorch import EfficientNet
 from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
-from sklearn.metrics import roc_auc_score
-import cv2
 
 #########################################중요###########################################
 # cd C:/Users/sook7/Desktop/CUAI 프로젝트/반려동물 안구질환 탐지/streamlit
